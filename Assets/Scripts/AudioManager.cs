@@ -1,7 +1,5 @@
 using UnityEngine;
 
-// Sahnede bos bir GameObject'e ("AudioManager") ekle.
-// 3) Arka plan muzigi + tum efekt sesleri buradan calar.
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }

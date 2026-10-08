@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public GameObject loseTextObject;
 
     [Header("Audio")]
-    public float wallSoundCooldown = 0.25f;   // duvara surtunurken ses tekrar tekrar calmasin
+    public float wallSoundCooldown = 0.25f;
     private float lastWallSoundTime = -10f;
     private bool hasWon = false;
     private bool isDead = false;
@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // 1) Duvara carpinca ses   4) Dusmana carpinca ses + Player yok edilir
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
@@ -73,7 +72,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Enemy'nin collider'i child objede (EnemyBody) olabilir, o yuzden parent'in tag'ine de bakiyoruz
     private bool IsEnemy(GameObject obj)
     {
         if (obj.CompareTag("Enemy")) return true;
@@ -85,7 +83,6 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead || hasWon) return;
         isDead = true;
-        // Ses AudioManager'dan caliyor, bu yuzden Player yok olunca kesilmez
         AudioManager.Instance.PlayPlayerDeath();
         if (loseTextObject != null) loseTextObject.SetActive(true);
         Destroy(gameObject);
@@ -94,7 +91,6 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        // 2) Kazaninca ses (sadece bir kez)
         if (count >= 8 && !hasWon)
         {
             hasWon = true;
