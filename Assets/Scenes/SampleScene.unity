@@ -1131,6 +1131,67 @@ MonoBehaviour:
   playerDeathClip: {fileID: 8300000, guid: 5dcdb316797449740991046e61e12af1, type: 3}
   pickupClip: {fileID: 8300000, guid: 56d52e0bebfeffb449b1b1c58f820b70, type: 3}
   sfxVolume: 1
+--- !u!1001 &644783876
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2008249945265264074, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_Name
+      value: VFX_PlayerTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 4592428206227675144, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1541011293}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7678972444904991695, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 02523f8225657b84eb23f7a64fce91b5, type: 3}
 --- !u!1 &699628372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2338,6 +2399,9 @@ MonoBehaviour:
   countText: {fileID: 547130852}
   winTextObject: {fileID: 1231363720}
   loseTextObject: {fileID: 699628372}
+  pickupEffect: {fileID: 2873337320200394997, guid: cbaf095bfca432e44ab005a6e29c20a2, type: 3}
+  explosionEffect: {fileID: 795638628918068287, guid: 401879ca82972b946b481ec9df6f886b, type: 3}
+  winEffect: {fileID: 5415526156215966433, guid: 46a5c585920d2cc4699f6126131b70d9, type: 3}
   wallSoundCooldown: 0.25
 --- !u!1 &1570619831
 GameObject:
@@ -3259,3 +3323,4 @@ SceneRoots:
   - {fileID: 2008604262}
   - {fileID: 1114247953}
   - {fileID: 634610339}
+  - {fileID: 644783876}

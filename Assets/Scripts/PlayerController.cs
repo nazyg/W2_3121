@@ -13,6 +13,11 @@ public class PlayerController : MonoBehaviour
     public GameObject winTextObject;
     public GameObject loseTextObject;
 
+    [Header("VFX")]
+    public GameObject pickupEffect;
+    public GameObject explosionEffect;
+    public GameObject winEffect;
+
     [Header("Audio")]
     public float wallSoundCooldown = 0.25f;
     private float lastWallSoundTime = -10f;
@@ -45,6 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Pickup"))
         {
+            SpawnVFX(pickupEffect, other.transform.position);
             other.gameObject.SetActive(false);
             AudioManager.Instance.PlayPickup();
             count++;
@@ -84,8 +90,16 @@ public class PlayerController : MonoBehaviour
         if (isDead || hasWon) return;
         isDead = true;
         AudioManager.Instance.PlayPlayerDeath();
+        SpawnVFX(explosionEffect, transform.position);
         if (loseTextObject != null) loseTextObject.SetActive(true);
         Destroy(gameObject);
+    }
+
+    private void SpawnVFX(GameObject prefab, Vector3 position)
+    {
+        if (prefab == null) return;
+        GameObject fx = Instantiate(prefab, position, Quaternion.identity);
+        Destroy(fx, 6f);
     }
 
     void SetCountText()
@@ -96,6 +110,7 @@ public class PlayerController : MonoBehaviour
             hasWon = true;
             winTextObject.SetActive(true);
             AudioManager.Instance.PlayWin();
+            SpawnVFX(winEffect, transform.position + Vector3.up * 0.5f);
         }
     }
 }
