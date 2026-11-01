@@ -41,6 +41,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = volume;
+        if (musicSource != null) musicSource.volume = volume;
+    }
+
+    public void SetMusicEnabled(bool enabled)
+    {
+        if (musicSource != null) musicSource.mute = !enabled;
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         if (clip != null) sfxSource.PlayOneShot(clip, sfxVolume);

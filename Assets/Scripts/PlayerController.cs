@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!enabled) return;   // menü açıkken (script kapalıyken) çarpışmaları yok say
         if (other.gameObject.CompareTag("Pickup"))
         {
             SpawnVFX(pickupEffect, other.transform.position);
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!enabled) return;
         if (collision.gameObject.CompareTag("Wall"))
         {
             if (Time.time - lastWallSoundTime > wallSoundCooldown)
